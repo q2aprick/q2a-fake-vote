@@ -208,8 +208,8 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 
 		// schema.org microdata - vote display might be formatted (e.g. '2k') so we use meta tag for true count
 		if ($microdata) {
-			$fields['netvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html($netvotes) . '"/>';
-			$fields['upvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html($upvotes) . '"/>';
+			$fields['netvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html(($netvotes+5)) . '"/>';
+			$fields['upvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html(($upvotes+5)) . '"/>';
 		}
 
 		// Voting buttons
