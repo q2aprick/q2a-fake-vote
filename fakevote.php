@@ -3,7 +3,7 @@
   
 function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $options = array())
 {
-	//if (qa_to_override(__FUNCTION__)) { $args=func_get_args(); return qa_call_override(__FUNCTION__, $args); }
+	if (qa_to_override(__FUNCTION__)) { $args=func_get_args(); return qa_call_override(__FUNCTION__, $args); }
 
 	require_once QA_INCLUDE_DIR . 'app/updates.php';
 	require_once QA_INCLUDE_DIR . 'app/posts.php';
@@ -157,16 +157,16 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 			$upvotes = (int)@$post['upvotes'];
 			$downvotes = (int)@$post['downvotes'];
 		}
-
+$upvotes = $upvotes +5;
 		$netvotes = $upvotes - $downvotes;
 
-		$fields['upvotes_raw'] = $upvotes + 5;
+		$fields['upvotes_raw'] = $upvotes+5;
 		$fields['downvotes_raw'] = $downvotes; 
-		$fields['netvotes_raw'] = $netvotes +5;
+		$fields['netvotes_raw'] = $netvotes+5;
 
 		// Create HTML versions...
 
-		$upvoteshtml = qa_html(qa_format_number(($upvotes+5), 0, true));
+		$upvoteshtml = qa_html(qa_format_number($upvotes, 0, true));
 		$downvoteshtml = qa_html(qa_format_number($downvotes, 0, true));
 
 		if ($netvotes >= 1)
@@ -177,7 +177,7 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 			$netvotesPrefix = '';
 
 		$netvotes = abs($netvotes);
-		$netvoteshtml = $netvotesPrefix . qa_html(qa_format_number(($netvotes+5), 0, true));
+		$netvoteshtml = $netvotesPrefix . qa_html(qa_format_number($netvotes, 0, true));
 
 		// Pass information on vote viewing
 
@@ -208,8 +208,8 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 
 		// schema.org microdata - vote display might be formatted (e.g. '2k') so we use meta tag for true count
 		if ($microdata) {
-			$fields['netvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html(($netvotes+5)) . '"/>';
-			$fields['upvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html(($upvotes+5)) . '"/>';
+			$fields['netvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html($netvotes) . '"/>';
+			$fields['upvotes_view']['suffix'] .= ' <meta itemprop="upvoteCount" content="' . qa_html($upvotes) . '"/>';
 		}
 
 		// Voting buttons
