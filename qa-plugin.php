@@ -20,7 +20,7 @@
 		exit;
 	}
 
-	qa_register_plugin_layer('fakevote.php', 'Fake Vote Layer');
+        qa_register_plugin_overrides('fakevote.php');
 
 /*
 	Omit PHP closing tag to help avoid accidental output
