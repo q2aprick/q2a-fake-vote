@@ -166,7 +166,7 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 
 		// Create HTML versions...
 
-		$upvoteshtml = qa_html(qa_format_number($upvotes, 0, true));
+		$upvoteshtml = qa_html(qa_format_number(($upvotes+5), 0, true));
 		$downvoteshtml = qa_html(qa_format_number($downvotes, 0, true));
 
 		if ($netvotes >= 1)
@@ -177,7 +177,7 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 			$netvotesPrefix = '';
 
 		$netvotes = abs($netvotes);
-		$netvoteshtml = $netvotesPrefix . qa_html(qa_format_number($netvotes, 0, true));
+		$netvoteshtml = $netvotesPrefix . qa_html(qa_format_number(($netvotes+5), 0, true));
 
 		// Pass information on vote viewing
 
