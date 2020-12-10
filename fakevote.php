@@ -157,7 +157,7 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 			$upvotes = (int)@$post['upvotes'];
 			$downvotes = (int)@$post['downvotes'];
 		}
-$upvotes = $upvotes +5;
+                $upvotes = $upvotes +5;
 		$netvotes = $upvotes - $downvotes;
 
 		$fields['upvotes_raw'] = $upvotes;
