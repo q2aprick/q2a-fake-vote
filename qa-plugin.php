@@ -1,7 +1,7 @@
 <?php
 
 /*
-	Plugin Name: Q2A Alpahnumeric Username
+	Plugin Name: Q2A Fake Vote
 	Plugin URI: https://github.com/q2aprick/q2a-fake-vote
 	Plugin Update Check URI: 
 	Plugin Description: Increase vote +5.
