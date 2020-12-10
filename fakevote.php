@@ -160,9 +160,9 @@ function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $opt
 $upvotes = $upvotes +5;
 		$netvotes = $upvotes - $downvotes;
 
-		$fields['upvotes_raw'] = $upvotes+5;
+		$fields['upvotes_raw'] = $upvotes;
 		$fields['downvotes_raw'] = $downvotes; 
-		$fields['netvotes_raw'] = $netvotes+5;
+		$fields['netvotes_raw'] = $netvotes;
 
 		// Create HTML versions...
 
