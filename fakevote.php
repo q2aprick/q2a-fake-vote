@@ -3,7 +3,7 @@
   
 function qa_post_html_fields($post, $userid, $cookieid, $usershtml, $dummy, $options = array())
 {
-	if (qa_to_override(__FUNCTION__)) { $args=func_get_args(); return qa_call_override(__FUNCTION__, $args); }
+	//if (qa_to_override(__FUNCTION__)) { $args=func_get_args(); return qa_call_override(__FUNCTION__, $args); }
 
 	require_once QA_INCLUDE_DIR . 'app/updates.php';
 	require_once QA_INCLUDE_DIR . 'app/posts.php';
